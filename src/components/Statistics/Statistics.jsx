@@ -1,6 +1,11 @@
-import StatisticsItem from "./StatisticsItem";
-import styles from "./Statistics.module.scss";
-import PropTypes from "prop-types";
+import PropTypes from 'prop-types';
+import { StatisticsItem } from 'components/Statistics/StatisticsItem';
+import {
+  StatisticsContainer,
+  StatsTitle,
+  StatsList,
+  StatsItem,
+} from 'components/Statistics/Statistics.styled';
 
 const randomColor = () => {
   const r = Math.floor(Math.random() * 256);
@@ -9,24 +14,23 @@ const randomColor = () => {
   return `rgb(${r},${g},${b})`;
 };
 
-const Statistics = ({ title, stats }) => {
+export const Statistics = ({ title, stats }) => {
   return (
-    <section className={styles.statistics}>
-      {title && <h2 className={styles.title}>{title}</h2>}
-      <ul className={styles.list}>
+    <StatisticsContainer>
+      {title && <StatsTitle>{title}</StatsTitle>}
+      <StatsList>
         {stats.map(({ id, label, percentage }) => (
-          <li
-            className={styles.item}
+          <StatsItem
             key={id}
             style={{
               backgroundColor: randomColor(),
             }}
           >
             <StatisticsItem label={label} percentage={percentage} />
-          </li>
+          </StatsItem>
         ))}
-      </ul>
-    </section>
+      </StatsList>
+    </StatisticsContainer>
   );
 };
 
@@ -38,5 +42,3 @@ Statistics.propTypes = {
     })
   ),
 };
-
-export default Statistics;

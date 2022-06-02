@@ -1,8 +1,11 @@
-.friendList {
+import styled from 'styled-components';
+
+export const FriendsContainer = styled.ul`
   text-align: center;
   margin-bottom: 20px;
-}
-.item {
+`;
+
+export const FriendItem = styled.li`
   display: flex;
   align-items: center;
   margin-left: auto;
@@ -13,23 +16,24 @@
   padding-left: 10px;
   border: 3px solid rgb(144, 136, 177);
   border-radius: 6px;
-}
-.item:not(:last-child) {
-  margin-bottom: 10px;
-}
-.name {
+  :not(:last-child) {
+    margin-bottom: 10px;
+  }
+`;
+
+export const Avatar = styled.img``;
+
+export const FriendName = styled.p`
   font-size: 20px;
   font-weight: 600;
   margin-left: 20px;
-}
-.statusOnline,
-.statusOffline {
+`;
+
+export const FriendStatus = styled.span`
   width: 20px;
   height: 20px;
   margin-right: 20px;
-  background-color: rgb(13, 92, 13);
   border-radius: 50%;
-}
-.statusOffline {
-  background-color: rgb(179, 33, 11);
-}
+  background-color: ${span =>
+    span.isOnline ? 'rgb(13, 92, 13)' : 'rgb(179, 33, 11)'};
+`;

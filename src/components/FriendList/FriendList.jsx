@@ -1,16 +1,19 @@
-import FriendListItem from "./FriendListItem";
-import styles from "./FriendList.module.scss";
-import PropTypes from "prop-types";
+import PropTypes from 'prop-types';
+import { FriendListItem } from 'components/FriendList/FriendListItem';
+import {
+  FriendsContainer,
+  FriendItem,
+} from 'components/FriendList/FriendList.styled';
 
-const FriendList = ({ friends }) => {
+export const FriendList = ({ friends }) => {
   return (
-    <ul className={styles.friendList}>
+    <FriendsContainer>
       {friends.map(({ id, isOnline, avatar, name }) => (
-        <li className={styles.item} key={id}>
+        <FriendItem key={id}>
           <FriendListItem isOnline={isOnline} avatar={avatar} name={name} />
-        </li>
+        </FriendItem>
       ))}
-    </ul>
+    </FriendsContainer>
   );
 };
 
@@ -24,5 +27,3 @@ FriendList.propTypes = {
     })
   ),
 };
-
-export default FriendList;

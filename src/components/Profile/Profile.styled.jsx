@@ -54,7 +54,14 @@ export const Label = styled.span`
   color: #000000;
 `;
 
-export const Text = styled.p`
+export const About = styled.p`
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 15px;
+  color: rgb(47, 45, 45);
+`;
+
+export const Quantity = styled.span`
   font-size: 20px;
   font-weight: 600;
   margin-bottom: 15px;

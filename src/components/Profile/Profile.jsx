@@ -7,7 +7,8 @@ import {
   Stats,
   StatsItem,
   Label,
-  Text,
+  About,
+  Quantity,
 } from './Profile.styled';
 
 export const Profile = ({
@@ -22,21 +23,21 @@ export const Profile = ({
       <ProfileInfo>
         <Avatar src={avatar} alt="User avatar" />
         <UserName>{username}</UserName>
-        <Text>@{tag}</Text>
-        <Text>{location}</Text>
+        <About>@{tag}</About>
+        <About>{location}</About>
       </ProfileInfo>
       <Stats>
         <StatsItem>
           <Label>Followers</Label>
-          <Text>{followers}</Text>
+          <Quantity>{followers}</Quantity>
         </StatsItem>
         <StatsItem>
           <Label>Views</Label>
-          <Text>{views}</Text>
+          <Quantity>{views}</Quantity>
         </StatsItem>
         <StatsItem>
           <Label>Likes</Label>
-          <Text>{likes}</Text>
+          <Quantity>{likes}</Quantity>
         </StatsItem>
       </Stats>
     </ProfileContainer>
