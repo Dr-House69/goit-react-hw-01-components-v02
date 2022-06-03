@@ -1,18 +1,12 @@
 import PropTypes from 'prop-types';
 import { StatisticsItem } from 'components/Statistics/StatisticsItem';
+import { getRandomColor } from 'helpers/getRandomColor';
 import {
   StatisticsContainer,
   StatsTitle,
   StatsList,
   StatsItem,
 } from 'components/Statistics/Statistics.styled';
-
-const randomColor = () => {
-  const r = Math.floor(Math.random() * 256);
-  const g = Math.floor(Math.random() * 256);
-  const b = Math.floor(Math.random() * 256);
-  return `rgb(${r},${g},${b})`;
-};
 
 export const Statistics = ({ title, stats }) => {
   return (
@@ -23,7 +17,7 @@ export const Statistics = ({ title, stats }) => {
           <StatsItem
             key={id}
             style={{
-              backgroundColor: randomColor(),
+              backgroundColor: getRandomColor(),
             }}
           >
             <StatisticsItem label={label} percentage={percentage} />
